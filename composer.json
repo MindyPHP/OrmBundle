@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "mindy/orm": "~4.0",
+        "mindy/orm": ">=4.0.3",
         "mindy/orm-nested-set": "~4.0",
         "mindy/orm-slug-field": "~4.0",
         "mindy/orm-fields": "~4.0",
