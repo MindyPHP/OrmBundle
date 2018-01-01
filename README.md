@@ -1,7 +1,7 @@
 # Orm Bundle
 
 [![Build Status](https://travis-ci.org/MindyPHP/OrmBundle.svg?branch=master)](https://travis-ci.org/MindyPHP/OrmBundle)
-[![Coverage Status](https://img.shields.io/coveralls/MindyPHP/OrmBundle.svg)](https://coveralls.io/r/MindyPHP/OrmBundle)
+[![codecov](https://codecov.io/gh/MindyPHP/OrmBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/MindyPHP/OrmBundle)
 [![Latest Stable Version](https://poser.pugx.org/mindy/orm-bundle/v/stable.svg)](https://packagist.org/packages/mindy/orm-bundle)
 [![Total Downloads](https://poser.pugx.org/mindy/orm-bundle/downloads.svg)](https://packagist.org/packages/mindy/orm-bundle)
 
