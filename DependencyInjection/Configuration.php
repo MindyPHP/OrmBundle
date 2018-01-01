@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Mindy Framework.
- * (c) 2017 Maxim Falaleev
+ * (c) 2018 Maxim Falaleev
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,21 +26,33 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $root = $treeBuilder->root('orm');
-        $root
+        $rootNode = $treeBuilder->root('orm');
+        $rootNode
             ->children()
-                ->arrayNode('connections')->info('Dbal connction parameters')
-                    ->prototype('array')
+                ->scalarNode('default_connection')
+                    ->defaultValue('default')
+                ->end()
+                ->arrayNode('connections')
+                    ->useAttributeAsKey('name')
+                    ->arrayPrototype()
                         ->beforeNormalization()
-                            ->ifTrue(function ($v) {
-                                return !is_array($v);
-                            })
-                            ->then(function ($v) {
-                                return [$v];
-                            })
+                        ->ifString()
+                        ->then(function ($v) {
+                            return ['url' => $v];
+                        })
                         ->end()
-
-                        ->prototype('scalar')->end()
+                        ->children()
+                            ->scalarNode('driver')
+                                ->validate()
+                                ->ifNotInArray(['mysql', 'pgsql', 'sqlite', 'mssql'])
+                                    ->thenInvalid('Invalid database driver %s')
+                                ->end()
+                            ->end()
+                            ->scalarNode('host')->end()
+                            ->scalarNode('username')->end()
+                            ->scalarNode('password')->end()
+                            ->scalarNode('url')->end()
+                        ->end()
                     ->end()
                 ->end()
             ->end();

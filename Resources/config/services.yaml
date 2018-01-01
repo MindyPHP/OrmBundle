@@ -1,0 +1,21 @@
+parameters:
+    orm.file.filesystem: oneup_flysystem.default_filesystem
+    orm.connections: []
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Mindy\Bundle\OrmBundle\:
+        resource: '../../*'
+        exclude: '../../{Tests,vendor}'
+
+    Mindy\Orm\ConnectionManager:
+        public: true
+        shared: false
+
+    orm.connection_manager:
+        alias: Mindy\Orm\ConnectionManager
+        public: true

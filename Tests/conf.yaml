@@ -1,0 +1,6 @@
+parameters:
+    kernel.secret: 123
+
+orm:
+    connections:
+        sqlite: 'sqlite:///:memory:'

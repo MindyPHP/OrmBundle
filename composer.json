@@ -6,6 +6,12 @@
         "orm"
     ],
     "license": "MIT",
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "authors": [
         {
             "name": "Falaleev Maxim",
@@ -13,18 +19,23 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "mindy/orm": "~3.0",
-        "mindy/orm-nested-set": "~3.0",
-        "mindy/orm-slug-field": "~3.0",
-        "mindy/orm-fields": "~3.0",
-        "mindy/orm-file-field": "~3.0",
+        "php": ">=7.0",
+        "mindy/orm": "~4.0",
+        "mindy/orm-nested-set": "~4.0",
+        "mindy/orm-slug-field": "~4.0",
+        "mindy/orm-fields": "~4.0",
+        "mindy/orm-file-field": "~4.0",
         "doctrine/migrations": "~1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0",
-        "symfony/config": "~3.0",
-        "symfony/dependency-injection": "~3.0"
+        "phpunit/phpunit": "^6.5",
+        "symfony/config": "~3.0|~4.0",
+        "symfony/dependency-injection": "~3.0|~4.0",
+        "symfony/framework-bundle": "~3.0|~4.0",
+        "symfony/var-dumper": "~3.0|~4.0"
+    },
+    "suggest": {
+        "mindy/migration-bundle": "Migrations for Mindy ORM"
     },
     "autoload": {
         "psr-4": {
@@ -37,12 +48,6 @@
     "autoload-dev": {
         "psr-4": {
             "Mindy\\Bundle\\OrmBundle\\Tests\\": "./Tests/"
-        }
-    },
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.6.8-dev"
         }
     }
 }
