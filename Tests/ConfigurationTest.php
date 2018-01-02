@@ -39,5 +39,34 @@ class ConfigurationTest extends TestCase
                 ],
             ]))
         );
+
+        $this->assertEquals(
+            [
+                'default_connection' => 'default',
+                'connections' => [
+                    'default' => [
+                        'dbname' => 'test',
+                        'user' => 'user',
+                        'password' => 'password',
+                        'port' => '123',
+                        'driver' => 'pdo_mysql',
+                        'host' => 'localhost'
+                    ]
+                ],
+            ],
+            $node->finalize($node->normalize([
+                'default_connection' => 'default',
+                'connections' => [
+                    'default' => [
+                        'dbname' => 'test',
+                        'user' => 'user',
+                        'password' => 'password',
+                        'port' => '123',
+                        'driver' => 'pdo_mysql',
+                        'host' => 'localhost'
+                    ]
+                ],
+            ]))
+        );
     }
 }
