@@ -24,7 +24,7 @@
         "mindy/orm-nested-set": "~4.0",
         "mindy/orm-slug-field": "~4.0",
         "mindy/orm-fields": "~4.0",
-        "mindy/orm-file-field": "~4.0",
+        "mindy/orm-file-field": ">=4.0.1",
         "doctrine/migrations": "~1.0"
     },
     "require-dev": {
