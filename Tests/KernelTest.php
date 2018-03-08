@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Mindy Framework.
- * (c) 2017 Maxim Falaleev
+ * Studio 107 (c) 2018 Maxim Falaleev
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,14 +40,5 @@ class KernelTest extends KernelTestCase
 
         $this->assertNull($manager->getConnection());
         $this->assertInstanceOf(Connection::class, $manager->getConnection('sqlite'));
-
-//        $this->assertInstanceOf(
-//            Mail::class,
-//            $container->get('mindy.bundle.mail.helper.mail')
-//        );
-//        $this->assertInstanceOf(
-//            Mail::class,
-//            $container->get(Mail::class)
-//        );
     }
 }

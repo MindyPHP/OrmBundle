@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Mindy Framework.
- * (c) 2018 Maxim Falaleev
+ * Studio 107 (c) 2018 Maxim Falaleev
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,8 +23,9 @@ class ExtensionTest extends TestCase
             'orm.file.filesystem',
             'orm.connections',
         ];
+        $container = $this->getContainer();
         foreach ($parameters as $id) {
-            $this->assertTrue($this->getContainer()->hasParameter($id));
+            $this->assertTrue($container->hasParameter($id));
         }
     }
 
